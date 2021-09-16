@@ -62,13 +62,13 @@ button {
   font-weight: 300;
 }
 
-.img_container {
+.music_container .img_container {
   width: 25rem;
   height: 25rem;
   margin: auto;
 }
 
-.img_container img {
+.music_container .img_container img {
   box-shadow: 0 1.2rem 3rem 0.5rem rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
@@ -76,7 +76,7 @@ button {
   object-fit: cover;
 }
 
-.music_controls {
+.music_container .music_controls {
   width: 20rem;
   display: flex;
   justify-content: space-between;
@@ -85,14 +85,18 @@ button {
   margin-top: 1rem;
 }
 
-.music_controls svg {
+.music_container .music_controls svg {
   color: #171717;
   font-size: 2rem;
   cursor: pointer;
   filter: drop-shadow(0 0.2rem 3rem 0.5rem rgba(0, 0, 0, 0.4));
 }
 
-.music_controls .main_button {
+.music_container .music_controls svg:hover {
+  color: gray;
+}
+
+.music_container .music_controls .main_button {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
@@ -105,37 +109,20 @@ button {
   padding: 17px;
 }
 
-.music_controls svg:hover {
-  color: gray;
-}
-
-.music_controls .main_button:hover {
+.music_container .music_controls .main_button:hover {
   color: #171717;
   background-color: #f6f6f6;
   box-shadow: 0 1rem 2rem 0.2rem rgba(0, 0, 0, 0.4);
 }
 
-.anime {
-  animation: rotateImg 3s linear infinite;
-}
-
-@keyframes rotateImg {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.progressbar_container {
+.music_container .progressbar_container {
   width: 100%;
   height: auto;
   padding: 1rem 0;
   margin: 1rem 0;
 }
 
-.progress_div {
+.music_container .progressbar_container .progress_div {
   width: 100%;
   height: 0.5rem;
   border-radius: 4rem;
@@ -149,21 +136,34 @@ button {
   appearance: none;
 }
 
-.progress {
+.music_container .progressbar_container .progress_div .progress {
   position: absolute;
   content: '';
   top: 0;
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #171717;
+  background-color: #03a0fa;
   cursor: pointer;
   appearance: none;
 }
 
-.progress_duration_meter {
+.music_container .progressbar_container .progress_duration_meter {
   display: flex;
   justify-content: space-between;
-  font-size: 1.2eem;
+  align-items: center;
+}
+
+.anime {
+  animation: rotateImg 3s linear infinite;
+}
+
+@keyframes rotateImg {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 /*# sourceMappingURL=style.css.map */

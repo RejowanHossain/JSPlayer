@@ -18,24 +18,31 @@ let progress_div = document.getElementById('progress_div');
 const songs = [{
         name: 'jsp-1',
         track: './assets/music/jsp-1.mp3',
-        cover: './assets/images/jsp-1.jpeg',
-        title: 'Emon Diney',
-        artist: 'Warfaze',
+        cover: './assets/images/jsp-1.jpg',
+        title: 'A night to remember',
+        artist: 'Rezwan',
     },
     {
         name: 'jsp-2',
         cover: './assets/images/jsp-2.jpg',
         track: './assets/music/jsp-2.mp3',
+        title: 'Outer Isolation',
+        artist: 'Rezwan',
+    },
+    {
+        name: 'jsp-3',
+        cover: './assets/images/jsp-3.jpeg',
+        track: './assets/music/jsp-3.mp3',
         title: 'Grace - Ambient Mix',
         artist: 'Rezwan',
     },
-    // {
-    //     name: 'jsp-3',
-    //     cover: './assets/images/jsp-3.jpg',
-    //     track: './assets/music/jsp-3.mp3',
-    //     title: 'Hard Rock Riff',
-    //     artist: 'Rezwan',
-    // },
+    {
+        name: 'jsp-4',
+        cover: './assets/images/jsp-4.jpg',
+        track: './assets/music/jsp-4.mp3',
+        title: 'Pulverized',
+        artist: 'Rezwan',
+    },
 ]
 
 
@@ -45,14 +52,14 @@ const playMusic = () => {
     isPlaying = true;
     audio.play();
     play.innerHTML = `<i class="fas fa-pause main_button"></i>`;
-    img.classList.add('anime');
+    play.classList.add('anime');
 };
 
 const pauseMusic = () => {
     isPlaying = false;
     audio.pause();
     play.innerHTML = `<i class="fas fa-play main_button"></i>`;
-    img.classList.remove('anime');
+    play.classList.remove('anime');
 };
 
 
@@ -66,7 +73,6 @@ const loadSongs = (songs) => {
     artist.textContent = songs.artist;
     img.src = songs.cover;
     audio.src = songs.track;
-
 }
 
 songIndex = 0;
@@ -108,9 +114,16 @@ audio.addEventListener('timeupdate', (e) => {
 
     let update_duration = `${min_duration}: ${sec_duration}`;
 
+    if (sec_duration < 10) {
+        update_duration = `${min_duration}: 0${sec_duration}`;
+    }
+
     if (duration) {
         total_duration.textContent = `${update_duration}`;
     }
+
+
+
 
     // current time update
     let min_currentTime = Math.floor(currentTime / 60);
