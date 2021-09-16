@@ -1,8 +1,9 @@
 @import "../scss/global.scss";
+@import "../scss/variables.scss";
 .main_div {
     width: 100vw;
     height: 100vh;
-    background: #f6f6f6;
+    background: $background-color;
     display: grid;
     place-items: center;
 }
@@ -20,10 +21,9 @@
 .music_container #title {
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    word-spacing: 0.5rem;
-    color: #171717;
+    color: $dark_color;
     margin: 2rem 0 0.5rem 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 500;
     text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
 }
@@ -57,11 +57,12 @@
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    margin-top: 5rem;
+    margin-top: 1rem;
 }
 
 .music_controls svg {
-    color: #111;
+    color: $dark-color;
+    ;
     font-size: 2rem;
     cursor: pointer;
     filter: drop-shadow(0 0.2rem 3rem 0.5rem rgba(0, 0, 0, 0.4));
@@ -71,8 +72,8 @@
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
-    background-color: #111;
-    color: #f6f6f6;
+    background-color: $dark_color;
+    color: $background-color;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,8 +86,8 @@
 }
 
 .music_controls .main_button:hover {
-    color: #111;
-    background-color: #f6f6f6;
+    color: $dark_color;
+    background-color: $background-color;
     box-shadow: 0 1rem 2rem 0.2rem rgba(0, 0, 0, 0.4);
 }
 
@@ -105,18 +106,20 @@
 }
 
 // progress bar style
-.progress_container {
+.progressbar_container {
     width: 100%;
     height: auto;
     padding: 1rem 0;
-    margin-top: 1rem;
+    margin: 1rem 0;
 }
 
 .progress_div {
     width: 100%;
     height: 0.5rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.7), 0 4px 8px rgba(0, 0, 0, 0.7), 0 8px 16px rgba(0, 0, 0, 0.7), 0 16px 32px rgba(0, 0, 0, 0.7), 0 32px 64px rgba(0, 0, 0, 0.7);
     border-radius: 4rem;
+    box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.29);
+    -webkit-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.29);
+    -moz-box-shadow: 0px 0px 9px 1px rgba(0, 0, 0, 0.29);
     position: relative;
     margin-top: 0.5rem;
     transition: all 1s linear;
@@ -129,10 +132,16 @@
     content: '';
     top: 0;
     left: 0;
-    width: 50%;
+    width: 0%;
     height: 100%;
-    background-color: #111;
-    transition: all 1s linear;
+    background-color: $dark_color;
+    // transition: width 1s linear;
     cursor: pointer;
     appearance: none;
+}
+
+.progress_duration_meter {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2eem;
 }
